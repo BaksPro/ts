@@ -7,6 +7,10 @@ interface   IFighter {
    
 }
 
+interface IImprovedFighter   extends IFighter{
+    doubleHit: (enemy, point:number) => void;
+}
+
 class Fighter implements IFighter {
     readonly name: string;
     readonly power: number;
@@ -28,17 +32,17 @@ class Fighter implements IFighter {
    } 
 }
  
-class ImprovedFighter extends Fighter { 
+class ImprovedFighter extends Fighter implements IImprovedFighter { 
    
    doubleHit(enemy, point:number) {
-     return super.hit(enemy, point * 2)
+      super.hit(enemy, point * 2)
    } 
 } 
  
 let fighter = new Fighter("Baks", 10, 3000);
 let improvedFighter = new ImprovedFighter("Axe", 10, 2000);
   
-function fight(defaultFidhter, upgradeFighter, ...points:Array<number>) {
+function fight(defaultFidhter:Fighter, upgradeFighter: ImprovedFighter, ...points:Array<number>) {
     let round:number = 1;
 
     for (let point of points) {
