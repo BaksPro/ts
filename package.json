@@ -1,0 +1,19 @@
+{
+  "name": "ts-project",
+  "version": "1.0.0",
+  "description": "'TypeScript project for BSA-2017'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  },
+  "author": "sahanr",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^2.4.1",
+    "webpack": "^3.3.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^2.3.1"
+  }
+}
